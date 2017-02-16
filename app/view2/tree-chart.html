@@ -1,0 +1,49 @@
+<script type="text/ng-template" id="nodes_renderer.html">
+  <div ui-tree-handle class="tree-node tree-node-content" ng-click="showPieChart(node)">
+    <a  data-nodrag ng-click="newSubItem(this)" style="margin-right: 8px;margin-bottom:5px">
+
+        <i ng-class="node.plusMinusClass" ng-if="node.hasChildren"></i>
+        <i ng-class="node.myDynamicClass"></i>
+
+    </a>
+    <!--<a  ng-if="node.nodes && node.nodes.length > 0" data-nodrag ng-click="toggle(this)">-->
+       <!--</a>-->
+    {{node.name}}
+  </div>
+  <ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">
+    <li ng-repeat="node in node.nodes" ui-tree-node ng-include="'nodes_renderer.html'">
+    </li>
+  </ol>
+</script>
+
+<div class="row">
+  <div class="col-sm-12">
+    <h3>Example - angular-ui-tree with angular-nvd3</h3>
+
+    <button class="btn btn-info" ng-click="expandAll()">Expand all</button>
+    <button class="btn btn-info" ng-click="collapseAll()">Collapse all</button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+    <div ui-tree id="tree-root" data-nodrag class="my-tree-root">
+      <ol ui-tree-nodes ng-model="data" data-nodrag>
+        <!--<nvd3 options="options" data="data"></nvd3>-->
+        <li ng-repeat="node in data" ui-tree-node data-nodrag ng-include="'nodes_renderer.html'" ></li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="info">
+      {{info}}
+    </div>
+        <nvd3 options="options" data="dataChart"></nvd3>
+
+  </div>
+</div>
+
+
+
+
