@@ -26,16 +26,16 @@ describe('my app', function() {
   });
 
 
-  describe('view2', function() {
+  describe('tree', function() {
 
     beforeEach(function() {
-      browser.get('index.html#!/view2');
+      browser.get('index.html#!/tree');
     });
 
 
-    it('should render view2 when user navigates to /view2', function() {
+    it('should render tree when user navigates to /tree', function() {
       expect(element.all(by.css('[ng-view] p')).first().getText()).
-        toMatch(/partial for view 2/);
+        toMatch(/partial for tree /);
     });
 
   });

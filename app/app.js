@@ -14,7 +14,7 @@
 
     $routeProvider
       .when('/tree', {
-        templateUrl: 'view2/tree-chart.html',
+        templateUrl: 'tree/tree-chart.html',
         controller: 'TreeCtrl'
       })
       .otherwise({redirectTo: '/tree'});
