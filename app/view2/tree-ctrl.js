@@ -22,23 +22,25 @@ angular.module('myApp.tree', ['ngRoute'])
     node.collapsed=!node.collapsed;
     $scope.getGlyphicon(node);
   }
-  // display the pie chart, a legend for the file types and the total size of all the files (given in MB).
-  //   A file object will have the following properties: name, type, size.
-  $scope.newSubItem = function (scope) {
+
+  $scope.toggleItem = function (scope) {
     var nodeData = scope.$modelValue;
     if (nodeData.hasChildren && nodeData.collapsed){
       $scope.toggleCollapsed(scope.$parent.$modelValue);
       getNodes(nodeData);
     }
+    else{
+      $scope.toggleCollapsed(nodeData);
+    }
     if(nodeData.nodes && nodeData.nodes.length >0) {
       scope.toggle();
     }
-    $scope.getGlyphicon(nodeData);
   };
 
   $scope.collapseAll = function () {
     $scope.$broadcast('angular-ui-tree:collapse-all');
-
+    // var els=angular.element(document.querySelector('.glyphicon-folder-open'));
+    // els.removeClass('.glyphicon-folder-open').addClass('.glyphicon-folder-close');
   };
 
   $scope.showPieChart = function(node){
@@ -48,6 +50,8 @@ angular.module('myApp.tree', ['ngRoute'])
         $scope.chartData.add(new oneInput(node.files[i].type,node.files[i].size));
       }
       $scope.dataChart= $scope.chartData.getjson();
+      $scope.options.title.text = "Content ( " + $scope.chartData.totalSize + " MB ) ";
+
     }
   }
 
@@ -123,6 +127,10 @@ angular.module('myApp.tree', ['ngRoute'])
           left: 0
         }
       }
+    },
+    title: {
+      enable: true,
+      text: ""
     }
   };
 

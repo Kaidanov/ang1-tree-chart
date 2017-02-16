@@ -1,13 +1,9 @@
 <script type="text/ng-template" id="nodes_renderer.html">
   <div ui-tree-handle class="tree-node tree-node-content" ng-click="showPieChart(node)">
-    <a  data-nodrag ng-click="newSubItem(this)" style="margin-right: 8px;margin-bottom:5px">
-
+    <a  data-nodrag ng-click="toggleItem(this)" style="margin-right: 8px;margin-bottom:5px">
         <i ng-class="node.plusMinusClass" ng-if="node.hasChildren"></i>
         <i ng-class="node.myDynamicClass"></i>
-
     </a>
-    <!--<a  ng-if="node.nodes && node.nodes.length > 0" data-nodrag ng-click="toggle(this)">-->
-       <!--</a>-->
     {{node.name}}
   </div>
   <ol ui-tree-nodes="" ng-model="node.nodes" ng-class="{hidden: collapsed}">

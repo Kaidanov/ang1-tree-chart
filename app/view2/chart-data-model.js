@@ -5,6 +5,7 @@ function oneInput(key,y){
 
 function chartData(){
   this.data = {};
+  this.totalSize = 0;
 }
 chartData.prototype.add = function (newObject){
   if(this.data[newObject.key]!=null)
@@ -12,6 +13,7 @@ chartData.prototype.add = function (newObject){
   else
     this.data[newObject.key] = newObject.y;
 
+  this.totalSize += newObject.y;
 }
 chartData.prototype.getjson = function (){
   var arr =[];
@@ -27,3 +29,4 @@ chartData.prototype.getjson = function (){
   }
   return arr;
 }
+

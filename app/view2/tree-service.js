@@ -3,9 +3,9 @@
 
   angular
     .module('myApp.treeservice', [])
-    .factory('treeservice', ['$http','$q','$timeout', treeservice]);
+    .factory('treeservice', ['$http','$q', treeservice]);
 
-  function treeservice($http,$q,$timeout) {
+  function treeservice($http,$q) {
     var service = {
       getFolders: getFolders
     };
