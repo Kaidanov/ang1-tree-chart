@@ -6,7 +6,7 @@
 When you choose the row of the folder - it will show the chart.
 When you press +/- icon it opens/close the folder hierarchy.
 
-![Alt text](https://github.com/Kaidanov/ang1-tree-chart/blob/master/scrrenshot.jpg "Example - using angular-ui-tree with angular-nvd3")
+![Alt text](https://github.com/Kaidanov/ang1-tree-chart/blob/master/scrrenshot1.jpg "Example - using angular-ui-tree with angular-nvd3")
 
 
 ### Clone `ang1-tree-chart`
