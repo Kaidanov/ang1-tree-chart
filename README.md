@@ -4,9 +4,10 @@
 ###Usage
 
 When you choose the row of the folder - it will show the chart.
+
 When you press +/- icon it opens/close the folder hierarchy.
 
-![Alt text](https://github.com/Kaidanov/ang1-tree-chart/blob/master/scrrenshot.jpg "Example - using angular-ui-tree with angular-nvd3")
+![Alt text](https://github.com/Kaidanov/ang1-tree-chart/blob/master/scrrenshot1.jpg "Example - using angular-ui-tree with angular-nvd3")
 
 
 ### Clone `ang1-tree-chart`
@@ -27,9 +28,11 @@ bower install angular-nvd3
 bower install d3
 ```
 
-Unable to find a suitable version for d3, please choose one by typing one of the numbers below:
+Unable to find a suitable version for d3, please choose one by typing one of the numbers below:  
+then choose :
+```
 2) d3#^3.3.13 which resolved to 3.5.17 and is required by angular-nvd3#1.0.9
-
+```
    ```
 bower install nvd3
 bower install bootstrap-css
