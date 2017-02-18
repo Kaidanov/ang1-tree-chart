@@ -17,9 +17,10 @@
         templateUrl: 'tree/tree-chart.html',
         controller: 'TreeCtrl'
       })
+        .when('/', {
+            templateUrl: 'tree/home.html',
+            controller: 'TreeCtrl'
+        })
       .otherwise({redirectTo: '/tree'});
   }]);
-
-
-
 
