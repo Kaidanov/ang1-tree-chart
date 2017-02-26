@@ -2,7 +2,7 @@
   'use strict';
 
 angular.module('myApp.tree', ['ngRoute'])
-.controller('TreeCtrl', ['$scope', 'treeservice',function($scope, treeservice) {
+.controller('TreeCtrl', ['$scope', 'treeservice','chartData',function($scope, treeservice, chartData) {
   $scope.remove = function (scope) {
     scope.remove();
   };
@@ -47,7 +47,7 @@ angular.module('myApp.tree', ['ngRoute'])
     $scope.chartData = new chartData();
     if(node.files.length>0){
       for (var i = 0; i < node.files.length; i++) {
-        $scope.chartData.add(new oneInput(node.files[i].type,node.files[i].size));
+        $scope.chartData.add($scope.chartData.item(node.files[i].type,node.files[i].size));
       }
       $scope.dataChart= $scope.chartData.getjson();
       $scope.options.title.text = "Content ( " + $scope.chartData.totalSize + " MB ) ";

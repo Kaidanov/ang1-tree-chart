@@ -30,3 +30,4 @@ chartData.prototype.getjson = function (){
   return arr;
 }
 
+

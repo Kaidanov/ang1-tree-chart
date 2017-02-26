@@ -6,6 +6,7 @@
     'ui.bootstrap',
     'myApp.tree',
     'myApp.treeservice',
+      'myApp.chartData',
     'ui.tree',
     'nvd3'
 
@@ -14,11 +15,11 @@
 
     $routeProvider
       .when('/tree', {
-        templateUrl: 'tree/tree-chart.html',
+        templateUrl: 'tree/templates/tree-chart.html',
         controller: 'TreeCtrl'
       })
         .when('/', {
-            templateUrl: 'tree/home.html',
+            templateUrl: 'tree/templates/home.html',
             controller: 'TreeCtrl'
         })
       .otherwise({redirectTo: '/tree'});

@@ -5,7 +5,7 @@
     return {
         restrict: 'E',
         scope: {},
-        templateUrl: 'tree/tree-chart.html',
+        templateUrl: 'tree/templates/tree-chart.html',
         controller: 'TreeCtrl'
     }});
 })();
